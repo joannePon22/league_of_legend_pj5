@@ -21,8 +21,6 @@ We take in two columns, teamkills and teandeaths, which are both quantitative da
 
 ## Final Model:
 
-Describe the modeling algorithm you chose, the hyperparameters that ended up performing the best, and the method you used to select hyperparameters and your overall model. Describe how your Final Model’s performance is an improvement over your Baseline Model’s performance.
-
 We add two features, total_gold and kd. We believe that adding these two values will increase the accuracy, since total_gold represent the resources amount the team obtain in the game. We believe that the higher the value in the total gold, the team will win the game more easier. Adding this feature, we think that can help us prdict the win or lose by considering the amount of gold the team have. Another feature, kill-to-death column represent the ratio of killing other and being killed, we think that it is obvious that if killing more people the team will be more likely to win the game, while having more times of being killed will decresed the chance of winning. We add those two features, to increase our accuracy, becuase we believe that they are important features that will affect the result. 
 
 The modeling algorithm we chose is the RandomForestClassifier. 
@@ -31,12 +29,6 @@ The modeling algorithm we chose is the RandomForestClassifier.
 ---
 
 ## Fairness Analysis:
-Clearly state your choice of Group X and Group Y, your evaluation metric, your null and alternative hypotheses, your choice of test statistic and significance level, the resulting p
--value, and your conclusion.
-
-Optional: Embed a visualization related to your permutation test in your website.
-
-Tip: When making writing your conclusions to the statistical tests in this project, never use language that implies an absolute conclusion; since we are performing statistical tests and not randomized controlled trials, we cannot prove that either hypothesis is 100% true or false.
 
 ---
 
