@@ -14,16 +14,18 @@ We want to predict the result of whether the team will win or lose in the game. 
 ---
 
 ## Baseline Model
-Describe your model and state the features in your model, including how many are quantitative, ordinal, and nominal, and how you performed any necessary encodings. Report the performance of your model and whether or not you believe your current model is “good” and why.
 
-We take in two columns, teamkills and teandeaths, which are both quantitative datas. These two columns represent the kills and deaths in the game. We want to use teamkills and teamdeaths to predict the result column by using ColumnTransformer and Stdscaler to build our Pipeline. 
+We take in two columns, teamkills and teandeaths, which are both quantitative datas. These two columns represent the kills and deaths in the game. We want to use teamkills and teamdeaths to predict the result column by using ColumnTransformer and Stdscaler to build our Pipeline. For class '0', our precision: 0.96, recall: 0.95, F1-score:0.96, and for class '1', our precision: 0.96, recall: 0.96, F1-score: 0.96. In this performance, we can say that our current model is good, becuase the model has high precision, recall and F1-score. We also have a weighted average, it is also high(0.96).
 
 ---
 
 ## Final Model:
-State the features you added and why they are good for the data and prediction task. Note that you can’t simply state “these features improved my accuracy”, since you’d need to choose these features and fit a model before noticing that – instead, talk about why you believe these features improved your model’s performance from the perspective of the data generating process.
 
 Describe the modeling algorithm you chose, the hyperparameters that ended up performing the best, and the method you used to select hyperparameters and your overall model. Describe how your Final Model’s performance is an improvement over your Baseline Model’s performance.
+
+We add two features, total_gold and kd. We believe that adding these two values will increase the accuracy, since total_gold represent the resources amount the team obtain in the game. We believe that the higher the value in the total gold, the team will win the game more easier. Adding this feature, we think that can help us prdict the win or lose by considering the amount of gold the team have. Another feature, kill-to-death column represent the ratio of killing other and being killed, we think that it is obvious that if killing more people the team will be more likely to win the game, while having more times of being killed will decresed the chance of winning. We add those two features, to increase our accuracy, becuase we believe that they are important features that will affect the result. 
+
+The modeling algorithm we chose is the RandomForestClassifier. 
 
 
 ---
